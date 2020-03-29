@@ -9,4 +9,8 @@ else
   export CADDY_FILE=/usr/local/caddy/Caddyfile
 fi
 
-/usr/local/bin/caddy -quic --conf ${CADDY_FILE}
+if [ "$NO_CADDY" = "true" ]; then
+  echo "no caddy"
+else
+  /usr/local/bin/caddy -quic --conf ${CADDY_FILE}
+fi  
